@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LoggerService;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -26,5 +27,10 @@ namespace CompanyEmployees.Extensions
 
             });
         } 
+
+        public static void ConfigureLoggerService (this IServiceCollection services)
+        {
+            services.AddSingleton<ILoggerManager, LoggerManager>();
+        }
     }
 }
